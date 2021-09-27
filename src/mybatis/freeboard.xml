@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- SQL mapper -->
+<mapper namespace="freeboard"> 
+	
+	<select id = "getList" resultType = "dto.Freeboard" parameterType="java.util.Map">
+		select * from freeboard f order by idx desc limit #{startNo}, #{pageSize}
+	</select>
+	
+	<select id="selectByIdx" resultType = "dto.Freeboard" parameterType="int">
+		select * from freeboard where idx = #{idx}
+	</select>
+	<select id="getCount" resultType = "int">
+		select count(*) from freeboard
+	</select>
+</mapper>
+<!-- ${} : 표현식. 중괄호안에 수식이 들어가면 수식에 대한 결과값을 구해서 출력 
+	 #{} : 중괄호 안의 값을 무조건 문자열(' ' 기호 사용)로 처리.-->
+
+
+
+
+
+
+
