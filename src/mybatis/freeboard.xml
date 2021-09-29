@@ -3,8 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- SQL mapper -->
-<mapper namespace="freeboard"> 
-	
+<mapper namespace="freeboard"> <!--  name 역할의 변수 -->
 	<select id = "getList" resultType = "dto.Freeboard" parameterType="java.util.Map">
 		select * from freeboard f order by idx desc limit #{startNo}, #{pageSize}
 	</select>
@@ -25,9 +24,14 @@
 		update freeboard set subject=#{subject}, content=#{content} where idx=#{idx}
 	</update>
 		
-	<delete id="delete" parameterType="int">
-		delete from freeboard where idx=#{idx}
+	<delete id="delete" parameterType="java.util.Map"> <!-- 글 비번 확인후 삭제 -->
+		delete from freeboard where idx=#{idx} and password = #{password}
 	</delete>
+	
+	<select id = "passwordCheck" resultType="dto.Freeboard" parameterType="java.util.Map">
+		select * from freeboard where idx =#{idx} and password = #{password}
+	</select>
+	
 	
 </mapper>
 <!-- ${} : 표현식. 중괄호안에 수식이 들어가면 수식에 대한 결과값을 구해서 출력 
