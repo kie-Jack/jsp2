@@ -15,6 +15,20 @@
 	<select id="getCount" resultType = "int">
 		select count(*) from freeboard
 	</select>
+	
+	<insert id="insert" parameterType="dto.Freeboard">
+		insert into freeboard (name, password, subject, content,ip)
+		values (#{name}, #{password}, #{subject}, #{content}, #{ip})
+	</insert>
+	
+	<update id="update" parameterType="dto.Freeboard">
+		update freeboard set subject=#{subject}, content=#{content} where idx=#{idx}
+	</update>
+		
+	<delete id="delete" parameterType="int">
+		delete from freeboard where idx=#{idx}
+	</delete>
+	
 </mapper>
 <!-- ${} : 표현식. 중괄호안에 수식이 들어가면 수식에 대한 결과값을 구해서 출력 
 	 #{} : 중괄호 안의 값을 무조건 문자열(' ' 기호 사용)로 처리.-->

@@ -1,6 +1,6 @@
 package dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class Freeboard {
 	private String subject;
 	private String content;
 	private int readCount;
-	private Date wdate;
+	private Timestamp wdate;
 	private String ip;
 	private short commentCount;
 }

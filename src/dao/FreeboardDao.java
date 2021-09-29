@@ -41,4 +41,28 @@ public class FreeboardDao {
 		mapper.close();
 		return cnt;
 	}
+	
+	public void insert(Freeboard dto) {
+		SqlSession mapper = factory.openSession();
+		mapper.insert("insert", dto);
+		mapper.commit();
+		mapper.close();
+	}
+	
+	public void update(Freeboard dto) {
+		SqlSession mapper = factory.openSession();
+		int n = mapper.update("update",dto);
+		mapper.commit();
+		mapper.close();
+	}
+	
+	
+	public void delete(int idx) {
+		SqlSession mapper = factory.openSession();
+		int n = mapper.delete("delete",idx);
+		mapper.commit();
+		mapper.close();
+	}
+
+	
 }
