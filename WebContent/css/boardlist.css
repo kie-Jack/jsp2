@@ -8,20 +8,23 @@ ul {
 	list-style: none;
 }
 ul #main{
-		display:flex;
-		flex-direction:column;
-		list-style: none;
-
+	display:flex;
+	flex-direction:column;
+	list-style: none;
 	}
 ul .row {
-		display: flex;
-		
+	display: flex;
+	border: 1px solid #F9A825;
+	border-radius: 5px;
+	
 }
 .row > li{
 	padding: 3px 0px;
+	text-align: left;
 }
 .row > li:nth-child(1){	/* .row의 자식태그 중 li 그리고 그 li의 n번째 위치(자식요소)로 select */
-	flex-basis:10%;
+	flex-basis:5%;
+	text-align: left;
 }	
 .row > li:nth-child(2){
 	flex-basis:35%;
@@ -34,4 +37,28 @@ ul .row {
 }
 .row > li:nth-child(5){
 	flex-basis:20%;
+}
+.pagenum {
+    border: 1px solid gray;
+    color: #F9A825;
+    padding: 3px 5px;
+    text-decoration: none;  /*  밑줄제거  */
+    cursor: pointer;
+    display: inline-block;
+   text-align:center;
+   font-size: 9pt;
+   border-radius: 5px;
+}
+.pagenum:hover{
+     background-color: #F9A825;
+     color:white;
+   border-radius: 5px;
+} 
+.current{
+	background-color: #FFFF00;
+	color: #F9A825;
+}
+a{
+	color:#F9A825;
+	
 }
