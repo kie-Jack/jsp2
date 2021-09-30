@@ -113,6 +113,9 @@ select count(*) from board_comment where mref =251) where idx = 251;
 update freeboard set commentCount=commentCount+1 where idx =0;
 
 
+delete from freeboard where idx=100;	--댓글이 있는 
+
+
 
 
 select * from freeboard order by idx desc;
