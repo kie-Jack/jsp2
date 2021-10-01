@@ -24,7 +24,7 @@
 			<li>application : ServletContext, 웹애플리케이션의 context 정보를 저장</li>
 		</ul>
 	</li>	
-	<li>Attribute를 저장 객체 : pageContext -> request -> session -> application
+	<li>Object타입 Attribute를 저장하는 객체 : pageContext -> request -> session -> application
 		(EL 사용할 때 화살표 방향으로 저장된 애트리뷰트 값을 찾습니다.)
 	</li>
 	<li>※EL 에서 사용할 수 있는 객체는 JSP 내장 객체와는 다릅니다.※</li>
